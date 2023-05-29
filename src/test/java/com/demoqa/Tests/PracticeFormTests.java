@@ -11,8 +11,7 @@ import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests {
 
@@ -23,6 +22,7 @@ public class PracticeFormTests {
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadStrategy = "eager";
         Configuration.holdBrowserOpen = true;
+
     }
 
     @Test
@@ -32,6 +32,8 @@ public class PracticeFormTests {
         String thanksText = "Thanks for submitting the form";
 
         open("/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
         $("#firstName").setValue("Vladimir");
         $("#lastName").setValue("Sokoltsov");
