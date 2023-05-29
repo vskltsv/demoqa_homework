@@ -6,7 +6,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
 
 
 import static com.codeborne.selenide.Condition.text;
@@ -28,7 +27,6 @@ public class PracticeFormTests {
     @Test
     void successTest() {
 
-        String picture = "/Users/vladimir/IdeaProjects/demoqa_homework/src/test/resources/picture.png";
         String thanksText = "Thanks for submitting the form";
 
         open("/automation-practice-form");
@@ -50,7 +48,7 @@ public class PracticeFormTests {
         $(byText("Physics")).click();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
-        $("#uploadPicture").uploadFile(new File(picture));
+        $("#uploadPicture").uploadFromClasspath("picture.png");
         $("#currentAddress").setValue("Almaty 123");
         $("#stateCity-wrapper").$("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
