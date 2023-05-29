@@ -44,18 +44,17 @@ public class PracticeFormTests {
         $("#dateOfBirth-wrapper").$(".react-datepicker__year-select").click();
         $("#dateOfBirth-wrapper").$(byText("1995")).click();
         $(".react-datepicker__day--019").click();
-        $("#subjectsInput").setValue("c");
-        $(byText("Physics")).click();
+        $("#subjectsWrapper").$("#subjectsInput").setValue("c");
+        $("#subjectsWrapper").$(byText("Physics")).click();
         $("#hobbiesWrapper").$(byText("Sports")).click();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("picture.png");
         $("#currentAddress").setValue("Almaty 123");
         $("#stateCity-wrapper").$("#state").click();
-        $("#stateCity-wrapper").$(byText("NCR")).click();
-        $(byText("Select City")).click();
-        $(byText("Gurgaon")).click();
+        $("#state").$(byText("NCR")).click();
+        $("#stateCity-wrapper").$("#city").click();
+        $("#city").$(byText("Gurgaon")).click();
         $("#submit").click();
-
 
         $(byText(thanksText)).shouldBe(Condition.visible);
         $(".table-responsive").$(byText("Student Name")).parent().shouldHave(text("Vladimir Sokoltsov"));
@@ -68,7 +67,7 @@ public class PracticeFormTests {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("picture.png"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Almaty 123"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Gurgaon"));
-        $("#closeLargeModal").click();
+
     }
 
 }
