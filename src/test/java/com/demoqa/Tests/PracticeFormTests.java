@@ -70,7 +70,7 @@ public class PracticeFormTests {
         $(".table-responsive").$(byText("Picture")).parent().shouldHave(text("picture.png"));
         $(".table-responsive").$(byText("Address")).parent().shouldHave(text("Almaty 123"));
         $(".table-responsive").$(byText("State and City")).parent().shouldHave(text("NCR Gurgaon"));
-
+        $("#closeLargeModal").click();
     }
 
 }
