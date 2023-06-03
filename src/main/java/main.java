@@ -11,12 +11,11 @@ public class main {
         System.out.println("сравнение int " + compareInt(1, 4));
         System.out.println("получение остатка от деления " + percentageNum(10, 3));
         System.out.println("инкрементация на 1 полученного int " + incrementInt(5));
-
         System.out.println(getAuto("BMW"));
         System.out.println(getAuto("AUDI"));
+        System.out.println(SwitchCaseExample(6));
 
     }
-
 
     public static int sumInt(int num1, int num2) {
         return num1 + num2;
@@ -56,11 +55,11 @@ public class main {
     }
 
 
-    public static String getAuto(String language) {
+    public static String getAuto(String markAuto) {
 
-        if (language != null && language.equals("BMW")) {
+        if (markAuto != null && markAuto.equals("BMW")) {
             return "BMW";
-        } else if (language != null && language.equals("AUDI")) {
+        } else if (markAuto != null && markAuto.equals("AUDI")) {
             return "AUDI";
         } else {
             return "Марка машины не определена";
@@ -68,4 +67,36 @@ public class main {
     }
 
 
+    public static String SwitchCaseExample(int day) {
+        String dayName;
+
+        switch (day) {
+            case 1:
+                dayName = "Понедельник";
+                break;
+            case 2:
+                dayName = "Вторник";
+                break;
+            case 3:
+                dayName = "Среда";
+                break;
+            case 4:
+                dayName = "Четверг";
+                break;
+            case 5:
+                dayName = "Пятница";
+                break;
+            case 6:
+                dayName = "Суббота";
+                break;
+            case 7:
+                dayName = "Воскресенье";
+                break;
+            default:
+                dayName = "Некорректный день";
+                break;
+        }
+
+        return dayName;
+    }
 }
