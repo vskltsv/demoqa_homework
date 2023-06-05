@@ -1,8 +1,8 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import components.CalendarComponent;
-import components.VerifyResultsСomponent;
+import pages.components.CalendarComponent;
+import pages.components.VerifyResultsСomponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
