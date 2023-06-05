@@ -9,7 +9,7 @@ public class VerifyResultsСomponent {
     String thanksText = "Thanks for submitting the form";
     SelenideElement
 
-            table = $(".table-responsive"),
+            tableResp = $(".table-responsive"),
 
             thankText = $(byText(thanksText));
 
@@ -18,6 +18,6 @@ public class VerifyResultsСomponent {
     }
 
     public void verifyResult(String key, String value) {
-        table.$(byText(key)).parent().shouldHave(text(value));
+        tableResp.$(byText(key)).parent().shouldHave(text(value));
     }
 }
