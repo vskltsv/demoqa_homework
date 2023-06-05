@@ -1,0 +1,23 @@
+package components;
+import com.codeborne.selenide.SelenideElement;
+import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byText;
+import static com.codeborne.selenide.Selenide.$;
+
+public class VerifyResultsСomponent {
+    String thanksText = "Thanks for submitting the form";
+    SelenideElement
+
+            table = $(".table-responsive"),
+
+            thankText = $(byText(thanksText));
+
+    public void verifyThankText() {
+        thankText.shouldBe(visible);
+    }
+
+    public void verifyResult(String key, String value) {
+        table.$(byText(key)).parent().shouldHave(text(value));
+    }
+}

@@ -1,4 +1,6 @@
-public class Main {
+package HW6;
+
+public class Sums {
     public static void main(String[] args) {
 
         System.out.println("сложение int: " + sumInt(42_000, 39_000));
