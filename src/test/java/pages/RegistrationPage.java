@@ -19,7 +19,6 @@ public class RegistrationPage {
             userNumberInput = $("#userNumber"),
             birthDayInput = $("#dateOfBirthInput"),
             hobbyCheckBox = $("#hobbiesWrapper"),
-            hobbyCheckBox2 = $("#hobbiesWrapper"),
             subjectsInput = $("#subjectsInput"),
             subjectsMathInput = $("#react-select-2-option-0"),
             stateInput = $("#react-select-3-input"),
@@ -70,7 +69,7 @@ public class RegistrationPage {
         return this;
     }
     public RegistrationPage setHobbies2(String hobby2) {
-        hobbyCheckBox2.$(byText(hobby2)).click();
+        hobbyCheckBox.$(byText(hobby2)).click();
         return this;
     }
 
