@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     CalendarComponent calendar = new CalendarComponent();
-    VerifyResultsСomponent verify = new VerifyResultsСomponent();
+    VerifyResultsСomponent verifyResults = new VerifyResultsСomponent();
 
     SelenideElement
             firstNameInput = $("#firstName"),
@@ -112,12 +112,12 @@ public class RegistrationPage {
     }
 
     public RegistrationPage verifyThanksText() {
-        verify.verifyThankText();
+        verifyResults.verifyThankText();
         return this;
     }
 
     public RegistrationPage verifyResult(String key, String value) {
-        verify.verifyResult(key, value);
+        verifyResults.verifyResult(key, value);
         return this;
     }
 

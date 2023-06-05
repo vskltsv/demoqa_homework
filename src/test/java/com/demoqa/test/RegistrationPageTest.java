@@ -12,7 +12,8 @@ public class RegistrationPageTest extends TestBase {
     void successfulRegistrationTest() {
 
 
-        registrationPage.openPage()
+        registrationPage
+                .openPage()
                 .closeBanners()
                 .setFirsName("Vladimir")
                 .setLastName("Sokoltsov")
