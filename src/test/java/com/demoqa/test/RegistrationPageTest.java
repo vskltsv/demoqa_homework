@@ -23,7 +23,7 @@ public class RegistrationPageTest extends TestBase {
                 .setBirthDay("19", "December", "1995")
                 .setSubject("Physics")
                 .setHobbies("Sports")
-                .setHobbies2("Music")
+                .setHobbies("Music")
                 .selectPicture("picture.png")
                 .setAddress("Almaty 123")
                 .setState("NCR")

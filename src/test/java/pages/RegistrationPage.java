@@ -68,10 +68,6 @@ public class RegistrationPage {
         hobbyCheckBox.$(byText(hobby)).click();
         return this;
     }
-    public RegistrationPage setHobbies2(String hobby2) {
-        hobbyCheckBox.$(byText(hobby2)).click();
-        return this;
-    }
 
     public RegistrationPage setBirthDay(String day, String month, String year) {
         birthDayInput.click();
