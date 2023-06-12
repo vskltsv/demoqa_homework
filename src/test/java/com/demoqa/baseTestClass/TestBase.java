@@ -8,7 +8,7 @@ public class TestBase {
         static void beforeAll() {
             baseUrl = "https://demoqa.com";
             browserSize = "1920x1080";
-            holdBrowserOpen = false;
+            holdBrowserOpen = true;
             pageLoadStrategy = "eager";
             screenshots = false;
             savePageSource = false;
