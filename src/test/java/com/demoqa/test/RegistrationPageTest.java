@@ -1,46 +1,62 @@
 package com.demoqa.test;
 
-import baseClass.TestBase;
+import com.demoqa.baseTestClass.TestBase;
 
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
+import com.demoqa.pages.RegistrationPage;
+
+import static com.demoqa.utils.RandomUtils.*;
 
 public class RegistrationPageTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
     void successfulRegistrationTest() {
+        String firstName = faker.name().firstName(),
+                lastName = faker.name().lastName(),
+                email = faker.internet().emailAddress(),
+                gender = getRandomGender(),
+                phoneNumber = faker.phoneNumber().subscriberNumber(10),
+                day = String.format("%02d", faker.number().numberBetween(1, 31)),
+                month = getRandomMonth(),
+                year = String.valueOf(getRandomInt(1990, 2023)),
+                subject = getRandomSubject(),
+                hobbies = getRandomHobbies(),
+                picture = "picture.png",
+                address = faker.address().fullAddress(),
+                state = getRandomState(),
+                city = getRandomCity(state);
 
 
         registrationPage
                 .openPage()
                 .closeBanners()
-                .setFirsName("Vladimir")
-                .setLastName("Sokoltsov")
-                .setUserEmail("vs@mail.kz")
-                .setGender("Male")
-                .setUserNumber("8777009091")
-                .setBirthDay("19", "December", "1995")
-                .setSubject("Physics")
-                .setHobbies("Sports")
-                .setHobbies("Music")
-                .selectPicture("picture.png")
-                .setAddress("Almaty 123")
-                .setState("NCR")
-                .setCity("Gurgaon")
+                .setFirsName(firstName)
+                .setLastName(lastName)
+                .setUserEmail(email)
+                .setGender(gender)
+                .setUserNumber(phoneNumber)
+                .setBirthDay(day, month, year)
+                .setSubject(subject)
+                .setHobbies(hobbies)
+                .selectPicture(picture)
+                .setAddress(address)
+                .setState(state)
+                .setCity(city)
                 .submitForm();
 
         registrationPage
                 .verifyThanksText()
-                .verifyResult("Student Name", "Vladimir Sokoltsov")
-                .verifyResult("Student Email", "vs@mail.kz")
-                .verifyResult("Gender", "Male")
-                .verifyResult("Mobile", "8777009091")
-                .verifyResult("Date of Birth", "19 December,1995")
-                .verifyResult("Subjects", "Physics")
-                .verifyResult("Hobbies", "Sports, Music")
-                .verifyResult("Picture", "picture.png")
-                .verifyResult("Address", "Almaty 123")
-                .verifyResult("State and City", "NCR Gurgaon");
+                .verifyResult("Student Name", firstName + " " + lastName)
+                .verifyResult("Student Email", email)
+                .verifyResult("Gender", gender)
+                .verifyResult("Mobile", phoneNumber)
+                .verifyResult("Date of Birth", day + " " + month + "," + year)
+                .verifyResult("Subjects", subject)
+                .verifyResult("Hobbies", hobbies)
+                .verifyResult("Picture", picture)
+                .verifyResult("Address", address)
+                .verifyResult("State and City", state + " " + city);
     }
 }
+
