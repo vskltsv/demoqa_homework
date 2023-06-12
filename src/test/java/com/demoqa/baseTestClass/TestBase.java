@@ -1,4 +1,4 @@
-package baseClass;
+package com.demoqa.baseTestClass;
 import org.junit.jupiter.api.BeforeAll;
 import static com.codeborne.selenide.Configuration.*;
 

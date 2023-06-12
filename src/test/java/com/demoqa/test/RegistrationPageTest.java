@@ -1,9 +1,9 @@
 package com.demoqa.test;
 
-import baseClass.TestBase;
+import com.demoqa.baseTestClass.TestBase;
 
 import org.junit.jupiter.api.Test;
-import pages.RegistrationPage;
+import com.demoqa.pages.RegistrationPage;
 
 public class RegistrationPageTest extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
