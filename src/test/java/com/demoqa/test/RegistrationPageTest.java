@@ -1,13 +1,13 @@
 package com.demoqa.test;
 
-import com.demoqa.baseTestClass.TestBase;
+import com.demoqa.basetest.TestBaseClass;
 
 import org.junit.jupiter.api.Test;
 import com.demoqa.pages.RegistrationPage;
 
 import static com.demoqa.utils.RandomUtils.*;
 
-public class RegistrationPageTest extends TestBase {
+public class RegistrationPageTest extends TestBaseClass {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test
