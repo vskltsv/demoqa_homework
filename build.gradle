@@ -16,8 +16,6 @@ ext {
     junitVersion = '5.9.3'
 }
 
-sourceCompatibility = '17'
-targetCompatibility = '17'
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
@@ -28,13 +26,13 @@ dependencies {
     testImplementation("io.qameta.allure:allure-selenide:${allureVersion}")
     testImplementation('com.github.javafaker:javafaker:1.0.2')
     testImplementation('org.slf4j:slf4j-simple:2.0.7')
+    testImplementation ('org.aspectj:aspectjrt:1.9.7')
+    testImplementation ('org.aspectj:aspectjweaver:1.9.7')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
-test {
-    useJUnitPlatform()
-}
+
 allure {
     version = "${allureVersion}"
 
@@ -52,6 +50,10 @@ allure {
             }
         }
     }
+}
+
+test {
+    useJUnitPlatform()
 }
 
 task remote_test(type: Test) {
