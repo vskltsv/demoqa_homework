@@ -1,4 +1,4 @@
-package com.demoqa.basetest;
+package com.demoqa.test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.attachments.Attachments;
@@ -15,6 +15,7 @@ import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBaseClass {
+    TestData testData = new TestData();
     public RegistrationPage registrationPage = new RegistrationPage();
     @BeforeAll
     static void beforeAll() {
