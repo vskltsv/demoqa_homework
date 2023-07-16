@@ -1,7 +1,6 @@
 package com.demoqa.test;
 
 import com.demoqa.basetest.TestBaseClass;
-import com.demoqa.pages.RegistrationPage;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

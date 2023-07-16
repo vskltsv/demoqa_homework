@@ -1,6 +1,5 @@
 package com.demoqa.basetest;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.attachments.Attachments;
 import com.demoqa.pages.RegistrationPage;
@@ -14,7 +13,6 @@ import java.util.Map;
 
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
-import static java.lang.System.getProperty;
 
 public class TestBaseClass {
     public RegistrationPage registrationPage = new RegistrationPage();
