@@ -1,5 +1,6 @@
 package com.demoqa.basetest;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.attachments.Attachments;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -19,12 +20,12 @@ public class TestBaseClass {
     @BeforeAll
     static void beforeAll() {
 
-        baseUrl = getProperty("baseUrl", "https://demoqa.com");
-        remote = getProperty("remote", "https://user1:1234@selenoid.autotests.cloud/wd/hub");
-        browser = getProperty("browser", "chrome");
-        browserSize = getProperty("browserSize", "1920x1080");
-        browserVersion = getProperty("version", "100");
+        browser = System.getProperty("browser", "chrome");
+        browserSize = System.getProperty("browserSize", "1920x1080");
+        browserVersion = System.getProperty("browserVersion", "114.0");
+        baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         pageLoadStrategy = "eager";
+        remote = System.getProperty("selenoid_autotests_cloud");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
