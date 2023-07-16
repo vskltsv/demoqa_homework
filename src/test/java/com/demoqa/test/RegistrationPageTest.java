@@ -2,6 +2,7 @@ package com.demoqa.test;
 
 import com.demoqa.basetest.TestBaseClass;
 import com.demoqa.pages.RegistrationPage;
+import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -11,7 +12,7 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("remote")
 public class RegistrationPageTest extends TestBaseClass {
-    RegistrationPage registrationPage = new RegistrationPage();
+
     String firstName = faker.name().firstName(),
             lastName = faker.name().lastName(),
             email = faker.internet().emailAddress(),
@@ -28,6 +29,7 @@ public class RegistrationPageTest extends TestBaseClass {
             city = getRandomCity(state);
 
     @Test
+    @Owner("Vladimir Sokoltsov")
     @DisplayName("Successful registration")
     void successfulRegistrationTest() {
 
