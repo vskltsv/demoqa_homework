@@ -23,7 +23,7 @@ public class TestBaseClass {
 
         browser = System.getProperty("browser", "chrome");
         browserSize = System.getProperty("browserSize", "1920x1080");
-        browserVersion = System.getProperty("browserVersion", "114.0");
+        browserVersion = System.getProperty("browserVersion", "100.0");
         baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         pageLoadStrategy = "eager";
         remote = System.getProperty("selenoid_autotests_cloud");
