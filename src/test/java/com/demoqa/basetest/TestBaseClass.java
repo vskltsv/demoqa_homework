@@ -26,7 +26,7 @@ public class TestBaseClass {
         browserVersion = System.getProperty("browserVersion", "100.0");
         baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
         pageLoadStrategy = "eager";
-        remote = System.getProperty("selenoid_autotests_cloud");
+        remote = System.getProperty("selenoid");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
