@@ -5,19 +5,31 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-
-import static com.demoqa.test.TestData.*;
+import static com.demoqa.utils.RandomUtils.*;
 import static io.qameta.allure.Allure.step;
 
 @Tag("remote")
 public class RegistrationPageTest extends TestBaseClass {
 
 
-
     @Test
     @Owner("Vladimir Sokoltsov")
     @DisplayName("Successful registration")
     void successfulRegistrationTest() {
+   String firstName = faker.name().firstName(),
+                lastName = faker.name().lastName(),
+                email = faker.internet().emailAddress(),
+                gender = getRandomGender(),
+                phoneNumber = faker.phoneNumber().subscriberNumber(10),
+                day = setRandomDay(),
+                month = getRandomMonth(),
+                year = String.valueOf(getRandomInt(1990, 2023)),
+                subject = getRandomSubject(),
+                hobbies = getRandomHobbies(),
+                picture = "picture.png",
+                address = faker.address().fullAddress(),
+                state = getRandomState(),
+                city = getRandomCity(state);
 
         step("Fill results", () -> {
             registrationPage

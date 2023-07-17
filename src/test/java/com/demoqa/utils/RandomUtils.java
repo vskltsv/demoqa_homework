@@ -32,6 +32,14 @@ public class RandomUtils {
         String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
         return faker.options().option(state);
     }
+    public static String setRandomDay() {
+        int day = faker.number().numberBetween(1, 28);
+        if (day < 10) {
+            return "0" + day;
+        } else {
+            return day + "";
+        }
+    }
 
     public static String getRandomCity(String state) {
         if (state.equals("NCR")) {
