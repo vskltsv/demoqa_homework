@@ -6,6 +6,7 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomUtils {
     public static Faker faker = new Faker();
+
     public static int getRandomInt(int min, int max) {
         return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
@@ -24,14 +25,17 @@ public class RandomUtils {
         String[] subjects = {"Math", "English", "Chemistry", "Civics", "Computer Science", "Arts", "Physics", "Economics"};
         return faker.options().option(subjects);
     }
+
     public static String getRandomHobbies() {
         String[] hobby = {"Sports", "Reading", "Music"};
         return faker.options().option(hobby);
     }
+
     public static String getRandomState() {
         String[] state = {"NCR", "Uttar Pradesh", "Haryana", "Rajasthan"};
         return faker.options().option(state);
     }
+
     public static String setRandomDay() {
         int day = faker.number().numberBetween(1, 28);
         if (day < 10) {

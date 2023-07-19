@@ -16,7 +16,7 @@ public class RegistrationPageTest extends TestBaseClass {
     @Owner("Vladimir Sokoltsov")
     @DisplayName("Successful registration")
     void successfulRegistrationTest() {
-   String firstName = faker.name().firstName(),
+        String firstName = faker.name().firstName(),
                 lastName = faker.name().lastName(),
                 email = faker.internet().emailAddress(),
                 gender = getRandomGender(),

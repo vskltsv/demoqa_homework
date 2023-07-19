@@ -2,14 +2,14 @@ package com.demoqa.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import com.demoqa.pages.components.CalendarComponent;
-import com.demoqa.pages.components.VerifyResultsСomponent;
+import com.demoqa.pages.components.VerifyResultsComponent;
 
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class RegistrationPage {
     CalendarComponent calendar = new CalendarComponent();
-    VerifyResultsСomponent verifyResults = new VerifyResultsСomponent();
+    VerifyResultsComponent verifyResults = new VerifyResultsComponent();
 
     SelenideElement
             firstNameInput = $("#firstName"),
@@ -116,6 +116,6 @@ public class RegistrationPage {
         return this;
     }
 
-    }
+}
 
 

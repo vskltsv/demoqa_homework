@@ -1,11 +1,9 @@
 package com.demoqa.test;
 
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.attachments.Attachments;
 import com.demoqa.config.WebConfig;
 import com.demoqa.pages.RegistrationPage;
-import com.demoqa.utils.RandomUtils;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
@@ -21,6 +19,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBaseClass {
     static WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
     public RegistrationPage registrationPage = new RegistrationPage();
+
     @BeforeAll
     static void beforeAll() {
 
@@ -34,13 +33,11 @@ public class TestBaseClass {
         }
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                "enableVNC", true,
-                "enableVideo", true
-        ));
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of("enableVNC", true, "enableVideo", true));
 
         browserCapabilities = capabilities;
     }
+
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
