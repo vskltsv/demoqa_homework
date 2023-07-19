@@ -1,10 +1,13 @@
 package com.demoqa.test;
 
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import com.demoqa.attachments.Attachments;
+import com.demoqa.config.WebConfig;
 import com.demoqa.pages.RegistrationPage;
 import com.demoqa.utils.RandomUtils;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,17 +19,19 @@ import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBaseClass {
-
+    static WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
     public RegistrationPage registrationPage = new RegistrationPage();
     @BeforeAll
     static void beforeAll() {
 
-        browser = System.getProperty("browser", "chrome");
-        browserSize = System.getProperty("browserSize", "1920x1080");
-        browserVersion = System.getProperty("browserVersion", "100.0");
-        baseUrl = System.getProperty("baseUrl", "https://demoqa.com");
+        baseUrl = config.baseUrl();
+        browser = config.browser();
+        browserVersion = config.browserVersion();
         pageLoadStrategy = "eager";
-        remote = System.getProperty("selenoid");
+        browserSize = config.browserSize();
+        if (config.isRemote()) {
+            remote = config.remoteUrl();
+        }
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
